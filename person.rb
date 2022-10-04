@@ -31,7 +31,7 @@ class Person < Nameable
 
   attr_accessor :name, :age
 
-  def initialize(name, age, parent_permission: true)
+  def initialize(age, name, parent_permission: true)
     super()
     @id = Random.rand(1..1000)
     @name = name
@@ -67,7 +67,7 @@ end
 # p obj.id
 # p obj.can_use_services?
 
-person = Person.new('maximilianus', 22)
+person = Person.new( 22, 'maximilianus')
 puts person.correct_name
 capitalized_person = CapitalizeDecorator.new(person)
 puts capitalized_person.correct_name

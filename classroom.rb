@@ -6,7 +6,7 @@ class Classroom
     @students = []
   end
 
-  def student(param)
+  def add_student(param)
     @students.push(param)
     param.classroom = self
   end

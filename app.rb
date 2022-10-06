@@ -34,7 +34,9 @@ class App
       name = gets.chomp
       print 'Enter classroom:'
       classroom = gets.chomp
-      new_student = Student.new(age, classroom)
+      print 'Has parent permission? [Y/N]:'
+      parent_permission = gets.chomp.downcase == 'y'
+      new_student = Student.new(age, classroom, name, parent_permission)
       new_student.name = name
       @student.push(new_student)
       puts 'Student has been created successfully'
@@ -49,6 +51,8 @@ class App
       new_teacher.name = name
       @teacher.push(new_teacher)
       puts 'Teacher has been created successfully'
+    else
+      puts 'Invalid option'
     end
   end
 

@@ -11,6 +11,3 @@ class Teacher < Person
     true
   end
 end
-
-obj2 = Teacher.new('ride')
-p obj2.can_use_services?

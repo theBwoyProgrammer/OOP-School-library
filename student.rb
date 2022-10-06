@@ -17,6 +17,3 @@ class Student < Person
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
-
-obj1 = Student.new('3')
-p obj1.play_hooky

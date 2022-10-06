@@ -23,7 +23,7 @@ class App
     people.each_with_index { |person, i| print "(#{i}) Name: \"#{person.name}\", Age: \"#{person.age}\"\n" }
   end
 
-  def create_person
+  def create_person # rubocop:disable Metrics/MethodLength
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     input = gets.chomp.to_i
     case input
@@ -49,7 +49,6 @@ class App
       new_teacher.name = name
       @teacher.push(new_teacher)
       puts 'Teacher has been created successfully'
-
     end
   end
 

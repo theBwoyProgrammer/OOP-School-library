@@ -30,6 +30,12 @@ To work on this project locally you need to have Ruby installed on your machine.
 - Twitter: [@tech_wolf404](https://twitter.com/tech_wolf404)
 - LinkedIn: [@hatimdev](https://www.linkedin.com/in/hatimdev/)
 
+👤 **Tuyishimire Eric**
+
+- GitHub: [@TuyishimireEric](https://github.com/TuyishimireEric)
+- LinkedIn: [@TuyishimireEric](https://www.linkedin.com/in/TuyishimireEric/)
+- E-mail: <a href="mailto:tuyishimireericc@gmail.com">tuyishimireericc@gmail.com</a>
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!

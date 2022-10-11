@@ -3,6 +3,7 @@ require_relative 'person'
 require_relative 'rental'
 require_relative 'student'
 require_relative 'teacher'
+require 'json'
 
 class App
   attr_accessor :books, :teacher, :student, :rentals
@@ -45,11 +46,10 @@ class App
       age = gets.chomp.to_i
       print 'Name: '
       name = gets.chomp
-      print 'Enter specialization:'
+      print 'Enter specialization: '
       specialization = gets.chomp
-      new_teacher = Teacher.new(age, specialization)
-      new_teacher.name = name
-      @teacher.push(new_teacher)
+      new_teacher = Teacher.new(age, name, specialization)
+      @people.push(new_teacher)
       puts 'Teacher has been created successfully'
     else
       puts 'Invalid option'
@@ -89,5 +89,26 @@ class App
         print "Date: #{rental.date}, Book: \"#{rental.book.title}\" Author #{rental.book.author}\n"
       end
     end
+  end
+  def store_book
+    bookstore = []
+    @books.each { |book| bookstore.push({ title: book.title, author: book.author }) }
+    data = JSON.generate(bookstore)
+    File.write('book_list.json', data)
+  end
+  def store_rentals
+    rentalstore = []
+    @rentals.each { |rent| rentalstore.push({ date: rent.date, person: rent.person.name, book: rent.book.title }) }
+    data = JSON.generate(rentalstore)
+    File.write('rentals.json', data)
+  end
+  def store_person
+    staff = []
+    # students = []
+    # persons = [*@teacher, *@student]
+    @teacher.each { |teach| staff.push({ name: teach.name, age: teach.age, specialization: teach.specialization }) }
+    # @student.each { |std| students.push({ type: student, id: std.id, name: std.name, age: std.age, classroom: std.classroom, parent_permission: std.parent_permission }) }
+    data = JSON.generate(staff)
+    File.write('people.json', data)
   end
 end

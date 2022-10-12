@@ -1,5 +1,5 @@
 require 'rspec/autorun'
-require_relative '../ruby/teacher'
+require_relative '../teacher'
 
 describe Teacher do
   teacher = Teacher.new(1, 18, 'John', 'Math')

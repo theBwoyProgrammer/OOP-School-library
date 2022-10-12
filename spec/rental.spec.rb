@@ -1,7 +1,7 @@
 require 'rspec/autorun'
-require_relative '../ruby/rental'
-require_relative '../ruby/teacher'
-require_relative '../ruby/book'
+require_relative '../rental'
+require_relative '../teacher'
+require_relative '../book'
 
 describe Rental do
   it 'Test Rentals' do

@@ -1,5 +1,5 @@
 require 'rspec/autorun'
-require_relative '../ruby/person'
+require_relative '../person'
 
 describe Person do
   person = Person.new(1, 18, 'John', parent_permission: true)

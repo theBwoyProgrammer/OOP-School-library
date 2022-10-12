@@ -1,5 +1,5 @@
 require 'rspec/autorun'
-require_relative '../ruby/classroom'
+require_relative '../classroom'
 
 describe Classroom do
   classroom = Classroom.new('Math')

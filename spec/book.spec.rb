@@ -1,5 +1,5 @@
 require 'rspec/autorun'
-require_relative '../ruby/book'
+require_relative '../book'
 
 describe Book do
   book = Book.new('Abdollah', 'Maramagambo')

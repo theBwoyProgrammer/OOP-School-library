@@ -1,3 +1,4 @@
+# rubocop:disable all
 require_relative 'book'
 require_relative 'person'
 require_relative 'rental'
@@ -166,7 +167,6 @@ class App
       puts "rentals.json file doesn't exist"
     end
   end
-
   def fetch_objects(data)
     data.each do |rent|
       index = nil
@@ -189,3 +189,4 @@ class App
     end
   end
 end
+# rubocop:enable all

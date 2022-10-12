@@ -1,3 +1,5 @@
+require 'rspec/autorun'
+
 class Book
   attr_accessor :author, :title, :rentals
 

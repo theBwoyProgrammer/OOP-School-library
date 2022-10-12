@@ -1,7 +1,7 @@
 require_relative 'app'
 def start_app
-  @output = gets.chomp.to_i
-  case @output
+  @input = gets.chomp.to_i
+  case @input
   when 1
     @app.list_books
   when 2

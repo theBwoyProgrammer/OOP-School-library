@@ -1,6 +1,6 @@
 # OOP School Library
 
-This is a school library app built to showcase the students and teachers
+This is a school library app built to showcase the students, teachers, books and rentals
 
 ## Built With
 

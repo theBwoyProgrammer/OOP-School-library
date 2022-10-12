@@ -1,3 +1,5 @@
+require 'rspec/autorun'
+
 class Book
   attr_accessor :author, :title, :rentals
 
@@ -11,3 +13,5 @@ class Book
     Rental.new(date, self, person)
   end
 end
+
+

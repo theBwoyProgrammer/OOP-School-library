@@ -12,3 +12,4 @@ class Rental
     person.rentals.push(self)
   end
 end
+

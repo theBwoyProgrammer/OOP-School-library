@@ -31,7 +31,7 @@ class App
     end
   end
 
-  def create_person # rubocop:disable Metrics/MethodLength
+  def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     input = gets.chomp.to_i
     case input
@@ -103,18 +103,21 @@ class App
       end
     end
   end
+
   def store_book
     bookstore = []
     @books.each { |book| bookstore.push({ title: book.title, author: book.author }) }
     data = JSON.generate(bookstore)
     File.write('books.json', data)
   end
+
   def store_rentals
     rentalstore = []
     @rentals.each { |rent| rentalstore.push({ date: rent.date, person: rent.person.name, book: rent.book.title }) }
     data = JSON.generate(rentalstore)
     File.write('rentals.json', data)
   end
+
   def store_person
     persons = []
     @people.each do |person|
@@ -163,6 +166,7 @@ class App
       puts "rentals.json file doesn't exist"
     end
   end
+
   def fetch_objects(data)
     data.each do |rent|
       index = nil
@@ -172,13 +176,15 @@ class App
       create_rental(rent['date'], index, index) if index && index
     end
   end
+
   def fetch_people
     data = JSON.parse(File.read('people.json'))
     data.each do |person|
       @people << if person['character'] == 'Teacher'
                    Teacher.new(person['id'], person['age'], person['name'], person['specialization'])
                  else
-                   Student.new(person['id'], person['age'], person['name'], person['classroom'], person['parent_permission'])
+                   Student.new(person['id'], person['age'], person['name'], person['classroom'],
+                               person['parent_permission'])
                  end
     end
   end

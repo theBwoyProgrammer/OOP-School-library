@@ -5,8 +5,8 @@ class Main
     @app = App.new
     @input = 0
   end
-  def option
 
+  def option
     @app.fetch
     print 'Welcome to School Library App!'
     while @input != 7
